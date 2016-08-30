@@ -8,8 +8,7 @@ import javax.imageio.ImageIO;
 import com.schorkegame.schorke.level.tile.Tile;
 
 public class SpawnLevel extends Level {
-
-	private Tile[] tiles;
+	
 	private int[] levelPixels;
 
 	public SpawnLevel(String path) {
