@@ -14,11 +14,12 @@ import com.schorkegame.schorke.graphics.Screen;
 import com.schorkegame.schorke.input.Keyboard;
 import com.schorkegame.schorke.level.Level;
 import com.schorkegame.schorke.level.SpawnLevel;
+import com.schorkegame.schorke.level.TileCoordinate;
 
 public class Game extends Canvas implements Runnable {
 	private static final long serialVersionUID = 1L;
 
-	public static int width = 300;
+	public static int width = 500;
 	public static int height = width / 16 * 9;
 	public static int scale = 3;
 	public static String title = "Schorke";
@@ -45,9 +46,10 @@ public class Game extends Canvas implements Runnable {
 		frame = new JFrame();
 		key = new Keyboard();
 		//level = new RandomLevel(64, 64);
-		level = new SpawnLevel("/textures/level.png");
-		player = new Player(4 * 16, 4 * 16, key);
-		
+		level = Level.spawn;
+		TileCoordinate playerSpawn = new TileCoordinate(21, 34);
+		player = new Player(playerSpawn.x(), playerSpawn.y(), key);
+		player.init(level);
 		addKeyListener(key);
 	}
 

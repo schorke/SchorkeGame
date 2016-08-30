@@ -9,6 +9,8 @@ public class Level {
 	protected int height;
 	protected int[] tilesInt;
 	protected int[] tiles;
+	
+	public static Level spawn = new SpawnLevel("/levels/spawn_level.png");
 
 	public Level(int width, int height) {
 		this.width = width;
@@ -56,12 +58,17 @@ public class Level {
 	public Tile getTile(int x, int y) {
 		if (x < 0 || y < 0 || x >= width || y >= height)
 			return Tile.voidTile;
-		if (tiles[x + y * width] == 0xff00ff00)
-			return Tile.grass;
-		if (tiles[x + y * width] == 0xffffff00)
-			return Tile.flower;
-		if (tiles[x + y * width] == 0xff7f7f00)
-			return Tile.rock;
+		if (tiles[x + y * width] == Tile.color_spawn_grass)
+			return Tile.spawn_grass;
+		if (tiles[x + y * width] == Tile.color_spawn_dirt)
+			return Tile.spawn_dirt;
+		if (tiles[x + y * width] == Tile.color_spawn_rock)
+			return Tile.spawn_rock;
+		if (tiles[x + y * width] == Tile.color_spawn_wall)
+			return Tile.spawn_wall;
+		if (tiles[x + y * width] == Tile.color_spawn_woodPlank)
+			return Tile.spawn_woodPlank;
+		
 		return Tile.voidTile;
 	}
 }

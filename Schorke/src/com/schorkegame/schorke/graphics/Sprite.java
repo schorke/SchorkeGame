@@ -8,16 +8,20 @@ public class Sprite {
 	public int[] pixels;
 	private SpriteSheet spriteSheet;
 	
-	public static Sprite grass = new Sprite(16, 0, 0, SpriteSheet.tiles);
-	public static Sprite flower = new Sprite(16, 1, 0, SpriteSheet.tiles);
-	public static Sprite rock = new Sprite(16, 2, 0, SpriteSheet.tiles);
+	public static Sprite grass = new Sprite(16, 0, 1, SpriteSheet.tiles);
+	public static Sprite flower = new Sprite(16, 2, 1, SpriteSheet.tiles);
+	public static Sprite rock = new Sprite(16, 0, 2, SpriteSheet.tiles);
 	public static Sprite voidSprite = new Sprite(16, 0x168D81);
 	
-	/*public static Sprite player0 = new Sprite(16, 0, 10, SpriteSheet.tiles);
-	public static Sprite player1 = new Sprite(16, 1, 10, SpriteSheet.tiles);
-	public static Sprite player2 = new Sprite(16, 0, 11, SpriteSheet.tiles);
-	public static Sprite player3 = new Sprite(16, 1, 11, SpriteSheet.tiles);*/
+	// Spawn_Level Sprites
+	public static Sprite spawn_grass = new Sprite(16, 0, 0, SpriteSheet.spawn_level);
+	public static Sprite spawn_dirt = new Sprite(16, 2, 0, SpriteSheet.spawn_level);
+	public static Sprite spawn_rock = new Sprite(16, 0, 1, SpriteSheet.spawn_level);
+	public static Sprite spawn_woodPlank = new Sprite(16, 4, 0, SpriteSheet.spawn_level);
+	public static Sprite spawn_wall = new Sprite(16, 5, 0, SpriteSheet.spawn_level);
 	
+
+	// Player Sprites
 	public static Sprite playerUp1 = new Sprite(32, 0, 5, SpriteSheet.tiles);
 	public static Sprite playerUp2 = new Sprite(32, 0, 6, SpriteSheet.tiles);
 	public static Sprite playerUp3 = new Sprite(32, 0, 7, SpriteSheet.tiles);
